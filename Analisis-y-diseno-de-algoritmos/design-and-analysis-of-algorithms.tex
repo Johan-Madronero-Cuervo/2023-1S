@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+
+\author{Johan Madroñero Cuervo}
+\title{Design \& Analysis of Algorithms}
+\date{2023 - 1S}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[HL]{\textbf{Design \& Analysis of Algorithms}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definicion}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\begin{flushleft}
+
+\section{Lecture 1}
+Tue Feb  7 08:14:06 2023
+
+\subsection{Objetivos del curso}
+\begin{itemize}
+
+  \item[-] Encontrar el algoritmo más óptimo a los problemas propuestos.
+  \item[-] Aumentar la oferta de asignaturas \textbf{disciplinar optativas}.
+  \item[-] Preparar estudiantes para el circuito de competencias.
+  \item[-] Mejorar las probabilidades de vinculación laboral.
+
+\end{itemize}
+
+\subsection{Pre-requisitos}
+
+\begin{itemize}
+  \item[-] Excelentes bases de programación.
+  \item[-] Conocimientos de \textbf{Programación Orientada a Objetos}.
+  \item[-] Cálculo y Estadística.
+\end{itemize}
+
+\subsection{Metodología}
+
+\begin{itemize}
+
+  \item[-] 4 talleres prácticos con 20\% cada uno.
+  \item[-] Calificación de cada taller = $5.0 * \frac{realizados}{propuestos}$.
+  \item[-] 1 Trabajo final con exposición oral de 20\%.
+
+\end{itemize}
+
+\subsection{Dedicación horaria}
+
+144 horas totales de dedicación al curso.
+
+\subsection{Bibliografía}
+
+\begin{itemize}
+
+  \item[-] Introduction to Algorithms Cormen, Thomas.
+  \item[-] Algorithms Dasgupta.
+  \item[-] Algorithm Desing Kleinberg.
+  \item[-] Art of programming Contest Shamsul.
+  \item[-] Mathematics for Computer Science Lehman, Eric.
+
+\end{itemize}
+
+\subsection{Consideraciones importantes}
+
+\begin{itemize}
+
+  \item[-] Casi nada del cuso es original.
+  \item[-] Aprovechar grupo, monitor, asesorías.
+  \item[-] No vamos a hacer demostraciones para todo algoritmo.
+
+\end{itemize}
+
+\subsection{Aseosrías}
+
+\begin{itemize}
+
+  \item[-] jmoreno1@unal.edu.co
+  \item[-] daaristizabalg@uanl.edu.co
+  \item[-] crhenaor@unal.edu.co
+  \item[-] https://chat.whatsapp.com/Fio2A7fck8s75alHg2dgro
+
+\end{itemize}
+
+\subsection{Cursos y plataformas de interés}
+
+\begin{itemize}
+
+  \item[-] Codeforces y demás sitios de programación competitiva
+  \item[-] Standford, MIT y de más sitios de cursos en línea.
+
+\end{itemize}
+
+\subsection{Conteo de asistentes}
+\textit{``Siempre hay formas más eficientes para resolver problemas 
+triviales".}
+Se aborda la forma más eficiente de contar asistentes en un evento y finaliza
+con una dinámica que cuenta los participantes.
+
+\subsection{¿Qué es un algoritmo?}
+
+\begin{definition}
+\textbf{Algoritmo}
+\textit{Conjunto ordenado de instrucciones bien definidas, no ambiguas y 
+finitas con la finalidad de resolver un problema.}
+\end{definition}
+
+\subsection{Números de casa}
+Se plantea un ejercicio que en las notas de Felipe era Street Numbers y se 
+hace una explicación similar. 
+
+\subsection{Medida de eficiencia}
+Se utiliza la medida Big Oh. 
+
+\subsection{Notación Big Oh}
+En el curso se usa para eliminar discusiones de cómo se hacen las operaciones
+en la máquina. En este caso nos fijamos en la forma de la función en tiempo 
+empleado a medida que la entrada crece.
+
+\subsubsection{Definición}
+
+\begin{itemize}
+
+  \item[-] Se considera el peor escenario.
+  \item[-] Se realiza un análisis asintótico.
+  \item[-] No se presta atención a términos constantes o de orden superior.
+
+\end{itemize}
+
+\subsection{Utilidad de la notación Big Oh}
+ESta notación no es rigurosa y no es un predictor exacto. Este solo describe
+la curva de las soluciones en tiempo con respecto a entradas.
+Podemos observar que un algoritmo $O(N^2)$ será cuadrático.
+
+\newpage
+
+\section{Lecture 2}
+
+Tue Feb 14 08:09:23 2023
+
+\textit{"La primera solución que se nos ocurre o la solución más obvia 
+generalmente no es la mejor"}
+  - Julián Moreno.
+
+\subsection{Cantidad de divisores}
+Dado un número n, encontrar la cantidad de divisores de n diferentes de sí 
+mismo.
+
+Mejor caso: $O(\sqrt{N}$.
+
+\subsection{Algoritmo de Euclides}
+Encontrar el mínimo común múltiplo de dos enteros.
+
+Usando el algoritmo de Euclides el mejor caso es: $O(\log(max(A,b))$.
+
+\subsubsection{Criba de Eratóstenes}
+Dado un número $n$, imprimir todos los números primos $p$  $| p < n$. El mejor 
+caso es $O(N * \log(\log(N))$.
+
+\subsection{Comparación de complejidades}
+Es posible comparar algoritmos de forma teórica. 
+
+\subsection{Problemas P y NP}
+
+\begin{definition}
+
+  \textbf{Problema tipo P:} Aquel que se puede solucionar y verificar con un
+  algoritmo de orden polinómico. Como \textit{Números de calle}.
+
+\end{definition}
+
+\begin{definition}
+
+  \textbf{Problema tipo NP:} Aquel que se puede verificar en tiempo polinomial,
+  pero para solucionarlo requiere de un algoritmo de orden superior. 
+
+\end{definition}
+
+\begin{definition}
+
+  \textbf{Problema tipo NP Completo: } Un problema C es \textbf{NP} si se 
+  cumplen dos soluciones:
+
+  \begin{enumerate}
+
+    \item C es NP.
+    \item Todo problema \textbf{NP} se puede reducir a C en tiempo polinomial. 
+      Es decir que una solución para C (o parte de ella) se podría usar para 
+      resolver los problemas \textbf{NP}.
+
+  \end{enumerate}
+
+\end{definition}
+
+\subsubsection{SAT o B-SAT}
+Consiste en dterminar si una fórmula proposicional se puede hacer verdadera 
+mediante una determinada asignación de valores de verdad a sus variables. 
+
+
+\end{flushleft}
+
+\end{document}

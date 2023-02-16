@@ -1,0 +1,241 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+
+\author{Johan Madroñero Cuervo}
+\title{Artificial Neural Networks \& Bio-inspired Algorithms}
+\date{2023 - 1S}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[HL]{\textbf{Artificial Neural Networks \& Bio-inspired Algorithms}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definicion}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\section{Lecture 1}
+2/7/2023 6:05:48 PM
+
+Profesor: Juan David Ospina Arango. jdospina@unal.edu.co
+Monitora: Estefania Uribe Gaviria. esuribega@unal.edu.co
+
+textit{``Este curso está orientado en la optimización"}
+
+\subsection{Objetivos}
+
+\begin{itemize}
+
+  \item[-] Presentar el paradigma de sistemas conexinistas.
+  \item[-] Identificar aspectos fundamentales.
+  \item[-] Lograr un entendimiento adecuado del proceso de desarrollo 
+    de soluciones computarizadas con las herramientas dadas.
+  \item[-] Identificar aspectos claves para una solución exitoza.
+
+\end{itemize}
+
+\subsection{Competencias a desarrollar}
+
+\begin{itemize}
+
+  \item[-] Diseño y ejecución de proyectos.
+  \item[-] Comunicación de resultados del análisis multivariado.
+  \item[-] Trabajo en equipo.
+  \item[-] Modelamiento y programación.
+
+\end{itemize}
+
+\subsection{Conocimientos específicos}
+
+\begin{itemize}
+
+  \item[-] Sistemas bioinspirados.
+  \item[-] Optimización con métodos bioinspirados.
+  \item[-] Introducción a redes neuronales.
+  \item[-] Perceptriones y backpropagation.
+  \item[-] Aplicaciones de redes neuronales a datos tabulares.
+  \item[-] Aprendizaje profundo y textit{frameworks} de trabajo.
+
+\end{itemize}
+
+\subsection{Metodología}
+
+\begin{itemize}
+
+  \item[-] Exposiciones magistrales del docente.
+  \item[-] Desarrollo de proyectos.
+  \item[-] Seguimiento de cursos.
+
+\end{itemize}
+
+\subsection{Evaluación}
+
+\begin{itemize}
+
+  \item[-] Trabajo 1 \textbf{20\%}
+  \item[-] Trabajo 2 \textbf{80\%}
+
+\end{itemize}
+
+\section{Lecture 2}
+
+2/9/2023 6:03:08 PM
+
+Juan David Ospina Arango: \textit{Victor, creo que tu foto de perfil 
+de Gmail es candidata a cambiarse 
+por una más profesional}
+
+\subsection{Introducción al campo}
+
+Lectura recomendada: Introduction to Deep Learning de Sant Skarsi. 
+El profesor encontró que se aborda el tema de aprendizaje histórico
+de una forma muy interesante y sugiere que pensemos en lo que significa
+la inteligencia artificial.
+
+Lectura recomendada: De animales a dioses de Yuval Noah Harari, un 
+israelí. Se destaca que \textbf{Las máquinas hacen mucho por nosotros}
+
+Ilustración -> \textbf{racionalidad} vs superstición. La racionalidad 
+permite modificar el mundo, el pensamiento racional se consolidó como 
+ganador.
+
+Leibniz propone:
+
+\begin{itemize}
+
+  \item[-] Existe un lenguaje universal que permite describir todo con 
+    precisión, este lenguaje es un idioma abstracto que puede recibir
+    ideas independiente del lenguaje.
+  \item[-] \textit{Calculus Rationator}, es una máquina que puede 
+    procesar las ideas, descripciones, siguiendo la lógica. 
+
+\end{itemize}
+
+Aristóteles fundó las bases de la lógica moderna. Su defnición fue la 
+retórica. De nuevo regresamos a la pregunta, ¿qué entendemos por
+inteligencia. Hay un supuesto muy fuerte en este área.
+
+\begin{definition}
+Supuseto: La inteligencia y el aprendizajeson razonables.
+\end{definition}
+
+Hay una expresión común: \textit{"Hágalo sin mente"}
+Sin mente es diferente a sin inteligencia.
+
+Lógica - Stuart Mill (Sicologismo lógico)
+
+1859 George Boole propusó las leyes de pensamiento. Que son unas formas
+de abstraer la lógica humana.
+
+1950 Alan Turing (test de Turing). En esta fecha se marca por la sinergía 
+que generan la filosofía - sicología - computación - medicina 
+(biología, fisiología)
+
+\textbf{Dartmouth Summer Research Project} 1950. Mucha de la investigación
+que hoy se hace parte de los logros que se consiguieron en ese momento.
+
+Al día de hoy hay dos vertientes. Una de ella es muy filosófica. 
+¿Qué es aprender? ´Qué es ser inteligente? ¿Pueden las máquinas exhibir esto?
+Preguntas muy difíciles de responder desde la filosofía.
+
+\textit{El aprendizaje se reflaje por una conducta}
+
+\textit{El concepto de Conciencia no sirve para nada}
+
+Lectura recomendada: Life 3.0.
+\textit{Si la consciencia es la capacidad de reflexionar sobre sí mismo, se 
+puede definir que se reflexiona sobre los datos de entrada}.
+
+Large languge model.
+
+1950 - McCulloch y Pitts publicaron un paper que se llamó \textbf{Logical 
+Calculus of Ideas Inmanent in Neural Activity}. Este trabajo trataba de 
+responder cómo se procesa la lógica dentro de nosotros. Ellos propusieron 
+que hay un input, un estado basal, una salida y una función de procesamiento 
+y esa función era binaria indicando que se disparaba o no, entonces aparecen 
+los primeros modelos de las neuronas y arquitecturas. Esto fue llamado 
+\textbf{perceptrón}. Esto fue muy importante porque se podía 
+instrumentalizar. 6 años después nace la primera red neuroanl en 1956.
+
+Regla del perceptrón se refiere a una regla para encontrar b y w dada una 
+ssecuencia de datos de entrenamiento. Expresa que si el problema tiene 
+solución, converge a una solución y está garantizado. Los perceptrones 
+se conectaban con otros perceptrones y esto a su vez generaba capas.
+
+En 1960 aparecen otras arquitecturas. Como el juego de la vida que genera 
+una ilusión de vida con reglas muy sencillaz.
+
+En los 60 fue muy popular el \textit{razonamiento simbolico}, lo cual se 
+usó para que las máquinas aprendieran a jugar ajedrez, así como la 
+\textit{traducción de lenguajes}
+
+Le debemos mucho a Rusia en la computación, matemáticas y estadística.
+
+La \textit{traducción de lenguajes} fue decepcionante por las limitaciones 
+de la época.
+
+1969:  Minsky y Papert: "Los perceptrones solo son clasificadores lineales"
+Y no pueden hacer nada más allá de eso.
+
+Esto es superado por los perceptrones multicapa. Y así pueden resolver 
+problemas no lineales, pero calcular el w y b de cada neurona era muy 
+difícil hasta que en 1975 apareció BackPropagation. Por esta época 
+John Holland proponía los algoritmos evolutivos o genéticos se inspiran
+mucho en el juego de la vida.
+
+BackPropagation es para entrenar perceptrones multicapa.
+
+Los años 80 fueron diferentes arquitecturas: redes neuronales 
+recurrentes, en los años 90 aparecieron una clase de redes donde cada 
+neurona está conectada con la neurona que sigue y se introduce una 
+secuencia, la salida depende de la secuencia vista. A esto se le 
+conoce como \textit{Long-short term memory}. 
+
+Los 90 fueron una época de poca actividad para el campo. Venía 
+triunfando una técnica llamada máquinas de soporte vectorial.
+Esta manda los datos a otra dimensión donde se pueden separar bien 
+las categorías, no me preocupo a dónde los envía por el truco del 
+kernel, movemos los kernel hasta que tengamos una buena separabilidad
+de los datos. Fuerte fundamentación matemática. 
+
+En los 2000 sí apareció un cambio de paradigma, pues aparecieron las 
+redes neuronales convolucionales, las cuales tienen una gran aplicación
+en imagen y aparecen las redes neuronales profundas o de muchas capas.
+
+Redes neuronales aproximadores universales al avanzar en cálculo. 
+
+Luego pudieron representar audio, texto, imágenes, lo cual era muy 
+difícil de representar en matemática precisa, siguen siendo aproximadores,
+pero las redes neuronales han conseguido ahorrarnos representar una 
+sonrisa en una imagen, por ejemplo. Pero las redes lo consiguen y 
+por ello son sumamente útiles.
+
+\subsection{Juego de la vida}
+
+Es un juego unijugador que genera una población en una matriz.
+Las células pueden estar vivas o muertas.
+Mientras haya una condición, si una célula tiene 2 o 3 vecinos
+viven. Además si los vecinos son 3, la célula vive.
+
+Hoy pretendemos observar diferentes implementaciones del juego 
+de la vida.
+
+Hay diferentes tipos de convoluciones en imagénes, las cuales 
+se encargan de suavizar la imagen. 
+
+Se enseña una implementación del juego de la vida usando métodos
+de convolución.
+
+Tareas, ¿qué pasa si no aceptamos que el de abajo exactamente no va 
+a contar? o solo queremos que cuente la esquina superior izquierda.
+
+Tarea: hacer que el juego de la vida dependa de una función 2D.
+\end{document}
