@@ -1,0 +1,8 @@
+Semana 2
+
+Análisis y diseño de algoritmos 4/5
+
+Entender clase de análisis de decisiones <-
+
+Entender clase 1 de redes neuronales y algoritmos bioinspirados 
+
